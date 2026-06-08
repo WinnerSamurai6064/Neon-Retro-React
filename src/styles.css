@@ -1,0 +1,238 @@
+:root {
+  color: #f8f7ff;
+  background: #05040a;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(255, 48, 184, 0.28), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(0, 255, 234, 0.22), transparent 32%),
+    #05040a;
+}
+
+button {
+  color: inherit;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.phone-frame {
+  width: min(430px, 100%);
+  min-height: 860px;
+  border-radius: 34px;
+  overflow: hidden;
+  background: rgba(9, 8, 22, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.55);
+  position: relative;
+}
+
+.top-bar {
+  display: grid;
+  grid-template-columns: 48px 1fr 48px;
+  gap: 10px;
+  padding: 18px 14px 10px;
+  align-items: center;
+}
+
+.icon-button,
+.bottom-nav button {
+  height: 48px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.07);
+  display: grid;
+  place-items: center;
+}
+
+.address-bar {
+  height: 48px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 0 14px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f6d9ff;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  min-width: 0;
+}
+
+.address-bar span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.browser-area {
+  position: relative;
+  min-height: 720px;
+  padding: 14px;
+}
+
+.welcome-card {
+  border-radius: 28px;
+  padding: 28px;
+  min-height: 500px;
+  background:
+    linear-gradient(160deg, rgba(255, 49, 184, 0.18), rgba(0, 255, 234, 0.08)),
+    rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand-mark {
+  width: 84px;
+  height: 84px;
+  border-radius: 28px;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 30px;
+  color: #05040a;
+  background: linear-gradient(135deg, #ff40c6, #65fff1);
+  box-shadow: 0 0 34px rgba(255, 64, 198, 0.45);
+}
+
+.eyebrow {
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #7ffdf2;
+  margin-top: 26px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 54px;
+  letter-spacing: -0.06em;
+}
+
+.subtitle {
+  margin: 0 0 18px;
+  color: #ff6fd8;
+  font-weight: 700;
+}
+
+.intro {
+  line-height: 1.6;
+  color: #d7d3e7;
+  max-width: 330px;
+}
+
+.search-card {
+  margin-top: 24px;
+  height: 54px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  background: rgba(0, 0, 0, 0.32);
+  color: #ddd6f7;
+}
+
+.menu-panel {
+  position: absolute;
+  top: 18px;
+  right: 14px;
+  width: 82%;
+  border-radius: 26px;
+  padding: 18px;
+  background: rgba(8, 7, 21, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: -22px 0 80px rgba(0, 0, 0, 0.35);
+}
+
+.menu-head,
+.menu-row,
+.switch-row,
+.settings-link {
+  display: flex;
+  align-items: center;
+}
+
+.menu-head {
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.menu-head span {
+  display: block;
+  color: #ff6fd8;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.menu-list {
+  display: grid;
+  gap: 8px;
+}
+
+.menu-row,
+.settings-link {
+  width: 100%;
+  gap: 14px;
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.menu-row svg:last-child {
+  margin-left: auto;
+}
+
+.settings-block {
+  margin: 18px 0;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.settings-block p {
+  color: #ff6fd8;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.switch-row {
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 4px;
+  color: #e9e5f5;
+}
+
+.switch-row input {
+  accent-color: #ff40c6;
+}
+
+.bottom-nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  padding: 12px 14px 20px;
+  background: rgba(5, 4, 10, 0.88);
+}
+
+.bottom-nav button.active {
+  color: #65fff1;
+  box-shadow: 0 0 24px rgba(101, 255, 241, 0.28);
+}
