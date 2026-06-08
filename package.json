@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
-    "preview": "vite preview --host 0.0.0.0"
+    "preview": "vite preview --host 0.0.0.0",
+    "bundle:flutter": "npm run build && node scripts/copy-react-to-flutter.mjs",
+    "apk:debug": "npm run bundle:flutter && cd flutter_shell && flutter pub get && flutter build apk --debug",
+    "apk:release": "npm run bundle:flutter && cd flutter_shell && flutter pub get && flutter build apk --release"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
