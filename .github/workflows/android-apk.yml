@@ -1,0 +1,46 @@
+name: Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install React dependencies
+        run: npm install
+
+      - name: Build local React bundle
+        run: npm run bundle:flutter
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.24.5
+          channel: stable
+
+      - name: Install Flutter dependencies
+        working-directory: flutter_shell
+        run: flutter pub get
+
+      - name: Build debug APK
+        working-directory: flutter_shell
+        run: flutter build apk --debug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: neon-retro-debug-apk
+          path: flutter_shell/build/app/outputs/flutter-apk/app-debug.apk
